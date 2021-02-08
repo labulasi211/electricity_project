@@ -1,1 +1,4 @@
-<view >suoye</view>
+<view >首页
+    <text class="iconfont icon-icon-test1" ></text>
+
+</view>
