@@ -20,4 +20,5 @@
 }
 .index_swiper .swiper_position swiper navigator .swiper-image {
   width: 100%;
+  height: 100%;
 }
