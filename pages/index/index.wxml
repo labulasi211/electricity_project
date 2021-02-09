@@ -1,7 +1,25 @@
 <view class="electricity_project">
     <!-- 搜索框 开始 -->
-    <SearchInput>
-    
-    </SearchInput>
+    <SearchInput> </SearchInput>
     <!-- 搜索框 结束 -->
+    <!-- 轮播图 开始 -->
+    <view class="index_swiper">
+    <!-- 
+        swiper（100%*150px）和image（320px*240px）都是有默认宽高的，所以不对宽高进行一定的处理是不能很好的实现预期 
+        原图宽高：750*340
+    -->
+    <!-- 用于产生圆角 -->
+        <view class="swiper_position">
+        <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}" circular="{{true}}">
+            <block wx:for="{{swiperList}}" wx:key="image_src">
+                <navigator >
+                    <swiper-item>
+                        <image class="swiper-image" mode="widthFix" src="{{item.image_src}}" />
+                    </swiper-item>
+                </navigator>
+            </block>
+        </swiper>
+        </view>
+    </view>
+    <!-- 轮播图结束 -->
 </view>

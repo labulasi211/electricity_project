@@ -1,0 +1,23 @@
+.index_swiper {
+  width: 750rpx;
+  height: 340rpx;
+  padding: calc(340rpx*0.04) var(--themeRightMargin);
+  background: url(https://img.imgdb.cn/item/60226a6c3ffa7d37b32ec150.png);
+  background-size: 100%;
+}
+.index_swiper .swiper_position {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--themeRadius);
+}
+.index_swiper .swiper_position swiper {
+  height: 100%;
+  width: 100%;
+  border-radius: 35rpx;
+  overflow: hidden;
+  transform: translateY(0);
+}
+.index_swiper .swiper_position swiper navigator .swiper-image {
+  width: 100%;
+}

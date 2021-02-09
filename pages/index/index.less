@@ -1,0 +1,28 @@
+.index_swiper{
+    // 整个区域的大小和轮播显示的区域
+    width: 750rpx;
+    height: 340rpx;
+    padding: calc(340rpx*0.04) var(--themeRightMargin) ;
+    // 产生圆角
+    .swiper_position{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        border-radius: var(--themeRadius);
+        swiper{
+            height: 100%;
+            width: 100%;
+            border-radius: 35rpx;
+            overflow: hidden;
+            transform: translateY(0);
+            navigator{
+                .swiper-image{
+                    width: 100%;
+            }
+            }
+        }
+    }
+    
+    background: url(https://img.imgdb.cn/item/60226a6c3ffa7d37b32ec150.png);
+    background-size: 100%;
+}

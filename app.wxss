@@ -16,7 +16,11 @@ page,view,text,swiper,swiper-item,navigator,image
 */
 page{
     /* 定义主题颜色变量 */
-    --themeColor:#f74640;
+    --themeColor:#c20e0d;
+    /* 定义主题左右边距 */
+    --themeRightMargin:calc(750rpx*0.04);
+    /* 定义主题圆角角度 */
+    --themeRadius:35rpx;
     /* 定义统一的字体大小 */
     font-size: 28rpx;
 }

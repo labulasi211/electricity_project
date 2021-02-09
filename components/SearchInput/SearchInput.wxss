@@ -79,12 +79,12 @@
 }
 .search_input {
   height: 80rpx;
-  padding: 10rpx;
+  padding: 10rpx calc(750rpx*0.04);
   background-color: var(--themeColor);
 }
 .search_input navigator {
   height: 100%;
-  border-radius: 35rpx;
+  border-radius: var(--themeRadius);
   display: flex;
   justify-content: center;
   align-items: center;
