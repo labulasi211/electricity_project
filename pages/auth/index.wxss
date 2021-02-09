@@ -1,7 +1,0 @@
-view{
-    background-color: var(--themeColor);
-}
-
-text{
-    color: var(--themeColor);
-}

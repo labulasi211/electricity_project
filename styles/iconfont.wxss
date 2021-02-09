@@ -14,6 +14,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  .iconfont-icon-test4 {
+    font-family: "iconfont" !important;
+    font-size: 40rpx;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   
   .icon-gouwuchekong:before {
     content: "\e600";
@@ -49,6 +57,7 @@
   
   .icon-icon-test3:before {
     content: "\e63d";
+    font-size: 1rpx;
   }
   
   .icon-icon-test4:before {
