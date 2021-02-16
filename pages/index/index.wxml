@@ -11,10 +11,10 @@
     <!-- 用于产生圆角 -->
         <view class="swiper_position">
             <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}" circular="{{true}}">
-                <block wx:for="{{swiperList}}" wx:key="*this" >
+                <block wx:for="{{swiperList}}" wx:key="goods_id" >
                     <swiper-item >
                         <navigator >
-                            <image class="swiper-image" mode="widthFix" src="{{item}}" />
+                            <image class="swiper-image" mode="widthFix" src="{{item.image_src}}" />
                         </navigator>
                     </swiper-item>
                 </block>
