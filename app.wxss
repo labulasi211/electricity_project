@@ -19,6 +19,8 @@ page{
     --themeColor:#c20e0d;
     /* 定义主题左右边距 */
     --themeRightMargin:calc(750rpx*0.04);
+    /* 定义主题上下边距 */
+    --themeUpMargin:calc(340rpx*0.04);
     /* 定义主题圆角角度 */
     --themeRadius:35rpx;
     /* 定义统一的字体大小 */

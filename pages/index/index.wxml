@@ -2,24 +2,61 @@
     <!-- 搜索框 开始 -->
     <SearchInput> </SearchInput>
     <!-- 搜索框 结束 -->
-    <!-- 轮播图 开始 -->
-    <view class="index_swiper">
-    <!-- 
-        swiper（100%*150px）和image（320px*240px）都是有默认宽高的，所以不对宽高进行一定的处理是不能很好的实现预期 
-        原图宽高：750*340
-    -->
-    <!-- 用于产生圆角 -->
-        <view class="swiper_position">
-            <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}" circular="{{true}}">
-                <block wx:for="{{swiperList}}" wx:key="goods_id" >
-                    <swiper-item >
-                        <navigator >
-                            <image class="swiper-image" mode="widthFix" src="{{item.image_src}}" />
-                        </navigator>
-                    </swiper-item>
-                </block>
-            </swiper>
+    <scroll-view scroll-y="{{true}}" class="index_container">
+        <!-- 轮播图 开始 -->
+        <view class="index_swiper">
+        <!-- 
+            swiper（100%*150px）和image（320px*240px）都是有默认宽高的，所以不对宽高进行一定的处理是不能很好的实现预期 
+            原图宽高：750*340
+        -->
+        <!-- 用于产生圆角 -->
+            <view class="swiper_position">
+                <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{500}}" circular="{{true}}">
+                    <block wx:for="{{swiperList}}" wx:key="goods_id" >
+                        <swiper-item >
+                            <navigator >
+                                <image class="swiper-image" mode="widthFix" src="{{item.image_src}}" />
+                            </navigator>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
         </view>
-    </view>
-    <!-- 轮播图结束 -->
+        <!-- 轮播图结束 -->
+
+        <!-- 分类导航开始 -->
+        <view class="index_cate">
+        <navigator wx:for="{{catesList}}" wx:key="name">
+            <image mode="widthFix" src="{{item.image_src}}" />
+        </navigator>
+        </view>
+        <!-- 分类导航结束 -->
+
+        <!-- 楼层 开始 -->
+        <view class="index_floor">
+            <view class="floor_group"
+            wx:for="{{floorList}}"
+            wx:for-item="item1"
+            wx:for-index="index1"
+            wx:key="floor_title"
+            >
+                <!-- 标题 -->
+                <view class="floor_title" >
+                    <image  mode="widthFix" src="{{item1.floor_title.image_src}}"/>
+                </view>
+                <!-- 内容 -->
+                <view class="floor_list" >
+                    <navigator 
+                    wx: wx:for="{{item1.product_list}}"
+                    wx:for-item="item2"
+                    wx:for-index="index2"
+                    wx:key="name"
+                    >
+                        <image mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}" />
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <!-- 楼层 结束 -->
+    </scroll-view>
 </view>

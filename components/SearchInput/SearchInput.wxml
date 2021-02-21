@@ -1,6 +1,14 @@
-<view class="search_input">
-    <navigator open-type="navigate" url="/pages/search/index">
-        <view class="iconfont-icon-test4 icon-icon-test4" ></view>
-        搜索
-    </navigator>
-</view>
+<!-- 
+	之前使用sticky实现搜索框粘顶，会存在一些问题并且使用起来比较复杂 
+	之后通过sroll_view标签将内容和搜索框独立出来一个窗口来实现搜索框的粘顶功能
+-->
+<!-- <mp-sticky> -->
+	<view class="search_input">
+		<navigator open-type="navigate" url="/pages/search/index">
+			<view class="iconfont-icon-test4 icon-icon-test4" ></view>
+			搜索
+		</navigator>
+	</view>
+<!-- </mp-sticky> -->
+
+
