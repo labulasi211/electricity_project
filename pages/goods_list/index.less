@@ -1,0 +1,44 @@
+.first_tab{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx 20rpx 0rpx;
+  .goods_item{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rpx 0rpx 20rpx;
+    .goods_item_area{
+      width: 95%;
+      height: 90%;
+      box-shadow: 0rpx 0rpx 10rpx 10rpx rgb(245, 245, 245);
+      border-radius: calc(var(--themeRadius)*0.5);
+      overflow: hidden;
+      .goods_img_wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        image{
+          width: 100%;
+        }
+      }
+      .goods_info_wrap{
+        padding: 10rpx;
+        .goods_name{
+          display: -webkit-box;
+          word-break: break-all;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          border-bottom: 10rpx solid #fff;
+        }
+        .goods_price{
+          color: var(--themeColor);
+          font-size: 30rpx;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
