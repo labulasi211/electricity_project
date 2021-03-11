@@ -5,7 +5,7 @@ export const request = (params) => {
   return new Promise((resolve, reject) => {
     wx.request({
       // 使用公共url之后就不需要对param进行扩张
-      //...params,
+      ...params,
       url:baseUrl+params.url,
       success: (result) => {
         resolve(result.data.message);

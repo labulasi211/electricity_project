@@ -1,49 +1,26 @@
 <SearchInput></SearchInput>
 <!-- 监听自定义组件事件 -->
 <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
-  <block wx:if="{{tabs[0].isActive==true}}">
+  <scroll-view class="tab_area" bindscrolltolower="scrollToLower" scroll-y="{{true}}" wx:if="{{tabs[0].isActive==true}}">
     <view class="first_tab">
-      <navigator class="goods_item">
+      <navigator class="goods_item"
+      wx:for="{{goodsList}}"
+      wx:key="goods_id"
+      >
         <view class="goods_item_area">
           <!-- 左侧图片容器 -->
           <view class="goods_img_wrap">
-            <image mode="widthFix" src="https://img.imgdb.cn/item/6022858d3ffa7d37b33b8034.png" />
+            <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://img.imgdb.cn/item/6035bc385f4313ce25a40a3e.jpg'}}" />
           </view>
           <!-- 右侧商品内容容器 -->
           <view class="goods_info_wrap">
-            <view class="goods_name">1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</view>
-            <view class="goods_price">￥100</view>
-          </view>
-        </view>
-      </navigator>
-      <navigator class="goods_item">
-        <view class="goods_item_area">
-          <!-- 左侧图片容器 -->
-          <view class="goods_img_wrap">
-            <image mode="widthFix" src="https://img.imgdb.cn/item/6022858d3ffa7d37b33b8034.png" />
-          </view>
-          <!-- 右侧商品内容容器 -->
-          <view class="goods_info_wrap">
-            <view class="goods_name">1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</view>
-            <view class="goods_price">￥100</view>
-          </view>
-        </view>
-      </navigator>
-      <navigator class="goods_item">
-        <view class="goods_item_area">
-          <!-- 左侧图片容器 -->
-          <view class="goods_img_wrap">
-            <image mode="widthFix" src="https://img.imgdb.cn/item/6022858d3ffa7d37b33b8034.png" />
-          </view>
-          <!-- 右侧商品内容容器 -->
-          <view class="goods_info_wrap">
-            <view class="goods_name">1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</view>
-            <view class="goods_price">￥100</view>
+            <view class="goods_name">{{item.goods_name}}</view>
+            <view class="goods_price">￥{{item.goods_price}}</view>
           </view>
         </view>
       </navigator>
     </view>
-  </block>
+  </scroll-view>
   <block wx:if="{{tabs[1].isActive==true}}">1</block>
   <block wx:if="{{tabs[2].isActive==true}}">2</block>
 </Tabs>

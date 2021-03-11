@@ -1,0 +1,8 @@
+<scroll-view bindscrolltolower="scrollToLower" scroll-y="{{true}}">
+  
+  <slot ></slot>
+  <view class="lower_fresh {{isLowerFresh?'active':''}}">
+    <text wx:if="{{isLast}}">已经是最后一页</text>
+    <text wx:elif="{{isLast}}">正在加载下一页...</text>
+  </view>
+</scroll-view>

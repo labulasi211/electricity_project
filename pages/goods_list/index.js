@@ -1,4 +1,9 @@
-// pages/goods_list/index.js
+import {
+  request
+}
+from "../../request/index.js";
+import regeneratorRuntime from "../../lib/runtime/runtime"
+
 Page({
 
   /**
@@ -21,14 +26,24 @@ Page({
         name:"价格",
         isActive:false
       },
-    ]
+    ],
+    goodsList:[],
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  // 商品列表需要的参数
+  QueryParam:{
+    query:'',
+    cid:'',
+    pagenum:1,
+    pagesize:10
+  },
+
+  // 商品总页数
+  TotalPages:1,
+
   onLoad: function (options) {
-    console.log(options);
+    this.QueryParam.cid=options.cid;
+    this.getGoodsList();
   },
   // 自定义组件tabs中的点击事件
   handleTabsItemChange(e){
@@ -40,5 +55,34 @@ Page({
     this.setData({
       tabs
     })
+  },
+
+  // 获取商品列表数据
+  async getGoodsList(){
+    const res=await request({url:'/goods/search',data:this.QueryParam})
+    // console.log(res);
+    // 动态的获取总商品数
+    const total=res.total;
+    // 确定总页数
+    this.TotalPages=Math.ceil(total/this.QueryParam.pagesize);
+    this.setData({
+      goodsList:[...this.data.goodsList,...res.goods],
+    })
+  },
+
+  // 下拉触底 加载下一页
+  scrollToLower(){
+    // console.log("触底");
+    if(this.TotalPages<=this.QueryParam.pagenum){
+      // 当前已是最后一页
+      wx.showToast({
+        title: "已经没有了",
+      });
+    }
+    else{
+      this.QueryParam.pagenum++;
+      // console.log("加载下一页");
+      this.getGoodsList();
+    }
   }
 })
