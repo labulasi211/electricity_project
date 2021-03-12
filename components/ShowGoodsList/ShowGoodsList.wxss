@@ -1,0 +1,7 @@
+scroll-view .lower_fresh {
+  background-color: lightgray;
+}
+scroll-view .lower_fresh text {
+  font-size: 14px;
+  color: lightseagreen;
+}

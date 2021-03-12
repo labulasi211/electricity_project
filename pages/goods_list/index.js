@@ -28,6 +28,10 @@ Page({
       },
     ],
     goodsList:[],
+    // 刷新标识符
+    isFresh:false,
+    // 是否是最后一页标识符
+    isLast:false,
   },
 
   // 商品列表需要的参数
@@ -59,9 +63,12 @@ Page({
 
   // 获取商品列表数据
   async getGoodsList(){
+    // 设置标识符表示发送中
+    this.setData({isFresh:true});
     const res=await request({url:'/goods/search',data:this.QueryParam})
     // console.log(res);
     // 动态的获取总商品数
+    this.setData({isFresh:false});
     const total=res.total;
     // 确定总页数
     this.TotalPages=Math.ceil(total/this.QueryParam.pagesize);
@@ -75,9 +82,7 @@ Page({
     // console.log("触底");
     if(this.TotalPages<=this.QueryParam.pagenum){
       // 当前已是最后一页
-      wx.showToast({
-        title: "已经没有了",
-      });
+      this.setData({isLast:true});
     }
     else{
       this.QueryParam.pagenum++;

@@ -20,7 +20,11 @@
         </view>
       </navigator>
     </view>
-  </scroll-view>
+    <view class="lower_fresh">
+      <text wx:if="{{isLast}}">已经是最后一页</text>
+      <text wx:elif="{{isFresh}}">正在加载下一页...</text>
+  </view>
+  </scroll-view >
   <block wx:if="{{tabs[1].isActive==true}}">1</block>
   <block wx:if="{{tabs[2].isActive==true}}">2</block>
 </Tabs>
