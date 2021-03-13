@@ -28,10 +28,12 @@ Page({
       },
     ],
     goodsList:[],
-    // 刷新标识符
+    // 加载标识符
     isFresh:false,
     // 是否是最后一页标识符
     isLast:false,
+    // 刷新标识符
+    isRefresh:false,
   },
 
   // 商品列表需要的参数
@@ -68,16 +70,36 @@ Page({
     const res=await request({url:'/goods/search',data:this.QueryParam})
     // console.log(res);
     // 动态的获取总商品数
-    this.setData({isFresh:false});
+    // 终止上下拉刷新
+    this.setData({
+      isFresh:false,
+      isRefresh:false
+    });
     const total=res.total;
     // 确定总页数
     this.TotalPages=Math.ceil(total/this.QueryParam.pagesize);
-    this.setData({
-      goodsList:[...this.data.goodsList,...res.goods],
-    })
+    // 当页面是第一页时不需要商品拼接
+    if(this.QueryParam.pagenum===1){
+      this.setData({
+        goodsList:res.goods,
+      })
+    }else{
+      this.setData({
+        goodsList:[...this.data.goodsList,...res.goods],
+      })
+    }
   },
 
-  // 下拉触底 加载下一页
+  // 下拉刷新
+  refresherRefresh(){
+    // 重置页码
+    this.QueryParam.pagenum=1;
+    this.setData({isLast:false});
+    // 重新发送请求
+    this.getGoodsList();
+  },
+
+  // 上拉触底 加载下一页
   scrollToLower(){
     // console.log("触底");
     if(this.TotalPages<=this.QueryParam.pagenum){
