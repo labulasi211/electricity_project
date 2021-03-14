@@ -5,7 +5,7 @@
 <!-- <mp-sticky> -->
 	<view class="search_input">
 		<navigator open-type="navigate" url="/pages/search/index">
-			<view class="iconfont-icon-test4 icon-icon-test4" ></view>
+			<view class="iconfont-style1 icon-icon-test4" ></view>
 			搜索
 		</navigator>
 	</view>

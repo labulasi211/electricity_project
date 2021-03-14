@@ -1,18 +1,56 @@
 <view class="detail">
   <!-- 搜索框 -->
   <SearchInput></SearchInput>
-  <!-- 标签 -->
-  <Tabs></Tabs>
   <!-- 内容显示区域 -->
   <scroll-view class="detail_area">
     <view class="detail_swiper">
       <swiper indicator-dots="{{true}}" autoplay="{{false}}" duration="{{500}}" circular="{{true}}">
         <block wx:for="{{goodsObj.pics}}" wx:key="pics_id">
           <swiper-item>
-            <image class="swiper-image" mode="widthFix" src="{{item.pics_mid}}" />
+            <image bindtap="handlePreviewImage" data-index="{{index}}" class="swiper-image" mode="widthFix" src="{{item.pics_mid}}" />
           </swiper-item>
         </block>
       </swiper>
     </view>
+    <view class="goods_price_row">
+      <view class="goods_price">
+        <text class="price_symbol">￥</text>
+        <text class="price_number">{{goodsObj.goods_price}}</text>
+      </view>
+      <view class="goods_collect">
+        <text class="iconfont-style1 icon-icon-test9"></text>
+        <text class="collect_text">收藏</text>
+      </view>
+    </view>
+    <view class="goods_name">{{goodsObj.goods_name}}</view>
+    <view class="goods_info">
+      <view class="goods_info_title">商品详细</view>
+      <view class="goods_info_content">
+        <rich-text nodes="{{goodsObj.goods_introduce}}"></rich-text>
+      </view>
+    </view>
   </scroll-view>
+  <view class="btm_tool">
+    <view class="tool_item">
+      <view class="iconfont-style1 icon-icon-test7"></view>
+      <view >客服</view>
+      <button open-type="contact"></button>
+    </view>
+    <view class="tool_item">
+      <view class="iconfont-style1 icon-icon-test5"></view>
+      <view >分享</view>
+      <button open-type="share"></button>
+    </view>
+    <navigator url="/pages/cart/index" open-type="switchTab" class="tool_item">
+      <view class="goods_cart_num" wx:if="{{cartNum!==0}}">{{cartNum}}</view>
+      <view class="iconfont-style1 {{cartNum===0?'icon-icon-test2':'icon-icon-test3'}}"></view>
+      <view >购物车</view>
+    </navigator>
+    <view class="tool_item btm_cart" bindtap="handleCartAdd">
+      加入购物车
+    </view>
+    <view class="tool_item btm_buy">
+      立即购买
+    </view>
+  </view>
 </view>
