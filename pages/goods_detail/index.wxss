@@ -1,1 +1,6 @@
-/* pages/goods_detail/index.wxss */
+.detail .detail_area .detail_swiper swiper {
+  height: 100vw;
+}
+.detail .detail_area .detail_swiper swiper image {
+  width: 100%;
+}
