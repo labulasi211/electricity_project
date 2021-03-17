@@ -1,1 +1,12 @@
-
+<view class="cart_area">
+  <!-- 收货地址 -->
+  <view class="receive_address_row" wx:if="{{!address.detailInfo}}">
+    <view class="address_btn">
+      <button bindtap="handleChooseAddress" type="default" plain="{{true}}">获取收货地址</button>
+    </view>
+  </view>
+  <view class="user_info_row" wx:else>
+    <view class="user_address">{{address.all}}</view>
+    <view class="user_phone">{{address.telNumber}}</view>
+  </view>
+</view>

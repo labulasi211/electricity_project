@@ -4,6 +4,9 @@ page {
 .cates {
   height: 100%;
 }
+.cates SearchInput {
+  background-color: var(--themeColor);
+}
 .cates .cates_container {
   height: calc(100vh - 80rpx);
   display: flex;

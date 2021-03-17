@@ -1,6 +1,6 @@
 <view class="electricity_project">
     <!-- 搜索框 开始 -->
-    <SearchInput> </SearchInput>
+    <SearchInput color="{{true}}"> </SearchInput>
     <!-- 搜索框 结束 -->
     <scroll-view scroll-y="{{true}}" class="index_container">
         <!-- 轮播图 开始 -->

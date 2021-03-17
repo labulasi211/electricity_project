@@ -1,1 +1,20 @@
-/* pages/cart/index.wxss */
+.cart_area .receive_address_row .address_btn button {
+  width: 100%;
+}
+.cart_area .user_info_row {
+  margin: 20rpx 10rpx;
+  display: flex;
+}
+.cart_area .user_info_row .user_address {
+  flex: 6;
+  border-right: 4rpx solid #666;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.cart_area .user_info_row .user_phone {
+  flex: 3;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}

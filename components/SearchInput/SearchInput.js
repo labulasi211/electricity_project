@@ -4,7 +4,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    color:{
+      type:Boolean,
+      // 用来是否需要将背景颜色修改成主题颜色
+      value:false,
+    }
   },
 
   /**

@@ -7,7 +7,7 @@
   padding: 10rpx 20rpx 0rpx;
 }
 .tab_area .first_tab .goods_item {
-  width: 177px;
+  width: 354rpx;
   height: 260;
   display: flex;
   justify-content: center;

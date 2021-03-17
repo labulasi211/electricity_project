@@ -86,7 +86,7 @@
   height: 80rpx;
   width: 750rpx;
   padding: 10rpx calc(750rpx*0.04);
-  background-color: var(--themeColor);
+  background-color: #fff;
 }
 .search_input navigator {
   height: 100%;
@@ -94,6 +94,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
   color: #666;
+  background-color: #fff;
+}
+.search_input .use_common {
+  border: 1px solid #666;
+}
+.use_theme_color {
+  background-color: var(--themeColor);
+  border: 1px solid var(--themeColor);
 }

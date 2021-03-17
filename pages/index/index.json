@@ -2,5 +2,7 @@
   "usingComponents": {
     "SearchInput":"../../components/SearchInput/SearchInput"
   },
-  "navigationBarTitleText": "项目首页"
+  "navigationBarTitleText": "项目首页",
+  "navigationBarBackgroundColor": "#c20e0d",
+  "navigationBarTextStyle":"white"
 }

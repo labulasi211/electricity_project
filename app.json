@@ -16,9 +16,9 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#c20e0d",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "电商项目",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"black"
   },
 
   "tabBar": {
