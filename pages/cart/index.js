@@ -36,7 +36,7 @@ onShow(){
     // 获取收货地址信息
     let address=await chooseAddress();
     // 对地址进行一个拼接
-    address.all=address.provinceName+address.cityName+address.countyName+address.detailInfo;
+    address.all=address.provinceName+address.cityName+address.countyName;
     this.setData({
       address,
     });
