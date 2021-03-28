@@ -30,6 +30,7 @@ Page({
         goods_id:res.goods_id,
         goods_name:res.goods_name,
         goods_price:res.goods_price,
+        goods_small_logo:res.goods_small_logo,
         // 关于兼容性问题需要对文本进行一些修改
         goods_introduce:res.goods_introduce.replace(/.webp/g,".jpg"),
         pics:res.pics,
@@ -58,7 +59,7 @@ Page({
     console.log(index);
     if(index===-1){
       // 没有该商品，将该商品加入购物车
-      cart.push({num:1,...this.data.goodsObj});
+      cart.push({num:1,checked:true,...this.data.goodsObj});
       index=cart.length-1;
     }else{
       // 有，则商品数量+1
